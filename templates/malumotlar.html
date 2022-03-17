@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+<br>
+<br>
+<br>
+<section>
+    <div class="container">
+         <div class="row offset-3">
+             {% for i in komis %}
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{{i.rasm.url}}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h3>{{i.ismi}}</h3>
+                  <p>{{i.TurarJoi}}</p>
+                <p>{{i.lavozimi}}</p>
+              </div>
+            </div>
+          </div>
+             {% endfor %}
+    </div>
+{% for i in maxxalla %}
+            <div class="col-12 offset-3">
+              {{i.content|safe}}
+            </div>
+            {% endfor %}
+</section>
+{% endblock %}

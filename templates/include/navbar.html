@@ -1,0 +1,33 @@
+{% load static %}
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="{% url 'home' %}">ibrat maxalla</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Asosiy</a></li>
+          {% if visible == True %}
+          <li><a class="nav-link scrollto" href="#about">Biz haqimizda</a></li>
+          <li><a class="nav-link scrollto" href="#services">Hodimlar</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Rasmlar</a></li>
+          <li><a class="nav-link scrollto" href="#team">Jamoa</a></li>
+          {% endif %}
+          <li><a class="nav-link scrollto" href="#contact">Aloqa</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'yangiliklar' %}">Yangiliklar</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'home' %}">Boshlanishi</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'UzTarih' %}">UzTarih</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'malumotlar' %}">Malumotlar</a></li>
+
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->

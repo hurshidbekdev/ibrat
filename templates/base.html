@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+{{ block.super }}
+{% endblock %}
+    <title>Title</title>
+    {% include 'include/cssfiles.html' %}
+</head>
+<body>
+{% include 'include/navbar.html' %}
+{% block base %}
+
+{% endblock %}
+{% include 'include/footer.html' %}
+{% include 'include/jsfiles.html' %}
+</body>
+</html>

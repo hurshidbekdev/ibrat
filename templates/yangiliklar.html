@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+<br>
+<br>
+<br>
+<style>
+  .video{
+  width:500px;
+  height:350px;
+  }
+</style>
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2> hodimlar almashuvi yangiliklari</h2>
+          <p>ibrat maxalla yangiliklari</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            {% for i in YangiHodim %}
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="{{i.rasmi.url}}" class="testimonial-img" alt="">
+                  <h3>{{i.ismi}}</h3>
+                  <p>{{i.haqida}}</p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+
+
+
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+      <div class="container-fluid">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>yangiliklar</h2>
+          <p>ibrat maxalla yangiliklar videolari </p>
+        </div>
+        <div class="row offset-1">
+          {% for video in Videolar %}
+          <div class=" video col-xl-6 col-lg-6 col-md-12 col-sm-12">
+            <p>ibrat maxalla yangiliklari</p>
+            <video controls class="img-fluid">
+              <source src="{{video.video_url.url}}" type="">
+            </video>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+{% endblock %}
